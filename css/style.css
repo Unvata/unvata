@@ -34,10 +34,14 @@ a:active {
     color: #224969;
 }
 
+.logoa {
+    
+    display: block;
+}
 
 .wrapper {
     width: 100%;
-    height: 64px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,6 +104,25 @@ a:active {
     transition: all 0.3s;
 }
 
+.Overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  
+  /* 付け外し用 */
+  .OverlayIsOpen {
+    visibility: visible;
+    opacity: 1;
+  }
+
 /* ハンバーガーボタン*/
 .button {
     position: fixed;
@@ -119,8 +142,8 @@ a:active {
 button {
     background-color:#fff;
     border-color: #ffffff;
-    margin-right: 10px;
-    margin-top: 10px;
+    margin-right: 0px;
+    margin-top: 0px;
 }
 
 .linetop {
@@ -128,13 +151,13 @@ button {
     top: 15px;
     width: 40px;
     height: 3px;
-    background-color: #1b1b1b;
+    background-color: rgb(45, 45, 45);
 }
 
 .linemedium {
     width: 40px;
     height: 3px;
-    background-color: #1b1b1b;
+    background-color: rgb(45, 45, 45);
 }
 
 .linebottom {
@@ -142,9 +165,43 @@ button {
     bottom: 15px;
     width: 40px;
     height: 3px;
-    background-color: #1b1b1b;
+    background-color: rgb(45, 45, 45);
 }
 
 .MenuIsOpen {
     transform: translateX(0);
 }
+
+/* */
+
+.linetop {
+    /* 省略 */
+    transition: all 0.3s; /* 追加 */
+  }
+  .ButtonIsOpen .linetop { /* 子孫セレクタ */
+    transform: translateY(13.5px) rotate(45deg);
+  }
+  .linemedium {
+    /* 省略 */
+    transition: all 0.3s; /* 追加 */
+  }
+  .ButtonIsOpen .linemedium { /* 子孫セレクタ */
+    opacity: 0;
+  }
+  .linebottom {
+    /* 省略 */
+    transition: all 0.3s; /* 追加 */
+  }
+  .ButtonIsOpen .linebottom { /* 子孫セレクタ */
+    transform: translateY(-13.5px) rotate(-45deg);
+  }
+
+  .IsScrollAllowed {
+    overflow: hidden
+  }
+
+  .hidden {
+    border-radius: 30%;
+    transition: 0.5s;
+    background-color: #ffffff;
+  }
