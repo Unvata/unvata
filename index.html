@@ -13,7 +13,7 @@
     <body>
         <header class="wrapper">
             <div>
-                <a href="index.html">
+                <a href="index.html" class="logoa">
                     <img class="logo" src="images\logo\logo.svg" alt="Unvata">
                 </a>
             </div>
@@ -29,11 +29,16 @@
 
             </nav>
 
+            
+
             <button class="button">
                 <div class="linetop"></div>
                 <div class="linemedium"></div>
                 <div class="linebottom"></div>
             </button>
+
+            <div class="Overlay"></div>
+
         </header>
 
         
@@ -48,15 +53,35 @@
         <script>
             const menu = document.querySelector(".menu")
             const button = document.querySelector(".button")
+            const overlay = document.querySelector(".Overlay")
+            const body = document.body
 
             const toggleMenu = () => {
                 menu.classList.toggle("MenuIsOpen")
+                button.classList.toggle("ButtonIsOpen")
+                body.classList.toggle("IsScrollAllowed")
+                overlay.classList.toggle("OverlayIsOpen")
+                
             }
 
             button.addEventListener("click", () => {
                 toggleMenu()
             })
+
+            overlay.addEventListener("click", () => {
+                toggleMenu()
+            })    
+
+            
+            button.addEventListener("click", toggleDisplay);
+
+            function toggleDisplay() {
+            const demo = document.querySelector('button');
+            demo.classList.toggle("hidden");
+            }
         </script>
+
+
 
     </body>
     
