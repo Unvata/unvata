@@ -2,6 +2,10 @@
     /*スマホのレスポンシブ用*/
 }
 
+img {
+    vertical-align: bottom;
+}
+
 li {
     list-style: none;
 }
