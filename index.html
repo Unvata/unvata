@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>Unvata website</title>
-        <link rel="stylesheet" type="text/css" href="css\style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="images\icon\favicon.ico">
-    </head>
-    
-    <body>
+<!--class zenはフォント適用-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unvata website</title>
+    <link rel="stylesheet" type="text/css" href="css\style.css">
+    <link rel="stylesheet" type="text/css" href="css\reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32" href="images\icon\favicon_uvt.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!--ロード画面-->
+    <div class="loadback">
+        <div class="loader">
+            <picture>
+                <!-- WebP対応ブラウザ用 -->
+                <source type="image/webp" srcset="video\loading\scifi_triangle_300px.webp" />
+                <!-- WebP非対応ブラウザ用 -->
+                <img src="video\loading\scifi_triangle_300px.png" width="300" height="300" alt=""
+                    class="preview-image" />
+            </picture>
+        </div>
+
+    </div>
+    <!--メイン-->
+    <div class="main">
         <header class="wrapper">
             <div>
                 <a href="index.html" class="logoa">
@@ -21,15 +42,15 @@
             <nav class="menu">
                 <div class="menu-header"></div>
                 <ul class="menulist">
-                    <li class="menuitem"><a href="#" class="menuitem-link">Gallery</a></li>
-                    <li class="menuitem"><a href="#" class="menuitem-link">Download</a></li>
-                    <li class="menuitem"><a href="#" class="menuitem-link">AboutMe</a></li>
+                    <li class="menuitem"><a href="#" class="menuitem-link zenbold">Gallery</a></li>
+                    <li class="menuitem"><a href="#" class="menuitem-link zenbold">Download</a></li>
+                    <li class="menuitem"><a href="#" class="menuitem-link zenbold">AboutMe</a></li>
                 </ul>
 
 
             </nav>
 
-            
+
 
             <button class="button">
                 <div class="linetop"></div>
@@ -41,51 +62,64 @@
 
         </header>
 
-        
-
         <nav class="sm">
-            
+
         </nav>
         <footer class="footer">
 
         </footer>
 
-        <script>
-            const menu = document.querySelector(".menu")
-            const button = document.querySelector(".button")
-            const overlay = document.querySelector(".Overlay")
-            const body = document.body
+    </div>
 
-            const toggleMenu = () => {
-                menu.classList.toggle("MenuIsOpen")
-                button.classList.toggle("ButtonIsOpen")
-                body.classList.toggle("IsScrollAllowed")
-                overlay.classList.toggle("OverlayIsOpen")
-                
-            }
+    <script>
+        const menu = document.querySelector(".menu")
+        const button = document.querySelector(".button")
+        const overlay = document.querySelector(".Overlay")
+        const body = document.body
 
-            button.addEventListener("click", () => {
-                toggleMenu()
-            })
+        const toggleMenu = () => {
+            menu.classList.toggle("MenuIsOpen")
+            button.classList.toggle("ButtonIsOpen")
+            body.classList.toggle("IsScrollAllowed")
+            overlay.classList.toggle("OverlayIsOpen")
 
-            overlay.addEventListener("click", () => {
-                toggleMenu()
-            })    
+        }
 
-            
-            button.addEventListener("click", toggleDisplay);
+        button.addEventListener("click", () => {
+            toggleMenu()
+        })
 
-            function toggleDisplay() {
+        overlay.addEventListener("click", () => {
+            toggleMenu()
+        })
+
+
+        button.addEventListener("click", toggleDisplay);
+
+        function toggleDisplay() {
             const demo = document.querySelector('button');
             demo.classList.toggle("hidden");
-            }
-        </script>
+        }
+    </script>
+
+    <script>
+        window.onload = function () {
+
+            setTimeout(() => {
+                const loadback = document.querySelector(".loadback")
+                loadback.classList.add("loaded");
+                const main = document.querySelector(".main");
+                main.style.visibility = "visible"
+
+            }, 2600);
+        };
+    </script>
 
 
 
-    </body>
-    
-    
+</body>
+
+
 
 
 </html>
