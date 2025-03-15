@@ -14,7 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+    </script>
 </head>
 
 <body>
@@ -66,10 +67,9 @@
         </header>
         <div class="Overlay"></div>
 
-        <div class="lottie-back"> 
-            
-            <lottie-player mode="normal" src="video\anim\unvata_logo_anim.json"
-                style="width: 80%" id="sample" class="lottie-mov">
+        <div class="lottie-back">
+
+            <lottie-player mode="normal" src="video\anim\unvata_logo_anim.json" style="width: 80%" id="sample" >
             </lottie-player>
         </div>
 
@@ -130,22 +130,13 @@
                 const loadback = document.querySelector(".loadback")
                 loadback.classList.add("loaded");
                 const main = document.querySelector(".main");
-                main.style.visibility = "visible"
+                main.style.visibility = "visible";
                 var v = document.getElementById('sample');
-            v.play();
-
+                v.play();
             }, 2300);
         };
 
 
-    </script>
-
-    <script>
-
-
-
-      
-        
     </script>
 
 
