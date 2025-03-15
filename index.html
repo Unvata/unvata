@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Unvata website</title>
+    <title>UnvataWebsite</title>
     <link rel="stylesheet" type="text/css" href="css\style.css">
     <link rel="stylesheet" type="text/css" href="css\reset.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
@@ -42,15 +43,19 @@
             <nav class="menu">
                 <div class="menu-header"></div>
                 <ul class="menulist">
-                    <li class="menuitem"><a href="#" class="menuitem-link zenbold">Gallery</a></li>
-                    <li class="menuitem"><a href="#" class="menuitem-link zenbold">Download</a></li>
-                    <li class="menuitem"><a href="#" class="menuitem-link zenbold">AboutMe</a></li>
+                    <li class="menuitem"><a href="#">
+                            <h1 class="menuitem-link zenbold">Gallery</h1>
+                        </a></li>
+                    <li class="menuitem"><a href="#">
+                            <h1 class="menuitem-link zenbold">Download</h1>
+                        </a></li>
+                    <li class="menuitem"><a href="#">
+                            <h1 class="menuitem-link zenbold">AboutMe</h1>
+                        </a></li>
                 </ul>
 
 
             </nav>
-
-
 
             <button class="button">
                 <div class="linetop"></div>
@@ -58,9 +63,17 @@
                 <div class="linebottom"></div>
             </button>
 
-            <div class="Overlay"></div>
-
         </header>
+        <div class="Overlay"></div>
+
+        <div class="lottie-back"> 
+            
+            <lottie-player mode="normal" src="video\anim\unvata_logo_anim.json"
+                style="width: 80%" id="sample" class="lottie-mov">
+            </lottie-player>
+        </div>
+
+
 
         <nav class="sm">
 
@@ -68,6 +81,11 @@
         <footer class="footer">
 
         </footer>
+
+        <a class="pagetop" href="#">
+            <div class="pagetop__arrow"></div>
+        </a>
+
 
     </div>
 
@@ -103,6 +121,9 @@
     </script>
 
     <script>
+
+
+
         window.onload = function () {
 
             setTimeout(() => {
@@ -110,9 +131,21 @@
                 loadback.classList.add("loaded");
                 const main = document.querySelector(".main");
                 main.style.visibility = "visible"
+                var v = document.getElementById('sample');
+            v.play();
 
-            }, 2600);
+            }, 2300);
         };
+
+
+    </script>
+
+    <script>
+
+
+
+      
+        
     </script>
 
 
