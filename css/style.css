@@ -396,7 +396,7 @@ html {
 .lottie-back {
   z-index: 1;
   background-blend-mode: hard-light;
-  background-image: linear-gradient(to bottom, #00000000, #313131), url(../images/body/sky.png);
+  background-image: linear-gradient(to bottom, #00000000, #313131), url(../images/body/sky.jpg);
   position: relative;
   height: 100vh;
 
